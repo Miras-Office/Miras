@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  مستندات و عروض  - مِـراس</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 60px auto;
+            padding: 30px;
+            background: transparent;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-align: right;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            direction: rtl;
+            color: #333;
+            background-color: #f0f0f0;
+            transition: border-color 0.3s;
+        }
+
+        .phone-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .phone-group select {
+            flex: 1;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .phone-group input {
+            flex: 2;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-primary {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            max-width: 220px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .btn-primary:hover {
+            background-color: #34495e;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                margin: 40px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">مِـراس</div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">الرئيسية</a>
+                <a href="services.html" class="nav-link">خدماتنا</a>
+                <a href="about.html" class="nav-link">من نحن</a>
+                <a href="portfolio.html" class="nav-link">أعمالنا</a>
+                <a href="contact.html" class="nav-link">تواصل</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Custom Request Form -->
+    <section class="container">
+        <h2 style="text-align:center; margin-bottom: 30px;">مستندات و عروض</h2>
+        <form action="https://formspree.io/f/xpwrwjwq" method="POST">
+            <!-- Hidden field for redirect after submission -->
+            <input type="hidden" name="_next" value="https://your-website.com/thank-you.html">
+
+            <div class="form-group">
+                <label for="fullname">الاسم الكامل</label>
+                <input type="text" id="fullname" name="fullname" required placeholder="أدخل الاسم الكامل">
+            </div>
+
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني</label>
+                <input type="email" id="email" name="email" required placeholder="بريد إلكتروني ساري">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">رقم الهاتف</label>
+                <div class="phone-group">
+                    <select id="country-code" name="country-code">
+                        <option value="+213">+213 - الجزائر</option>
+                        <option value="+973">+973 - البحرين</option>
+                        <option value="+20">+20 - مصر</option>
+                        <option value="+964">+964 - العراق</option>
+                        <option value="+962">+962 - الأردن</option>
+                        <option value="+965">+965 - الكويت</option>
+                        <option value="+961">+961 - لبنان</option>
+                        <option value="+218">+218 - ليبيا</option>
+                        <option value="+212">+212 - المغرب</option>
+                        <option value="+968">+968 - عُمان</option>
+                        <option value="+974">+974 - قطر</option>
+                        <option value="+966">+966 - السعودية</option>
+                        <option value="+249">+249 - السودان</option>
+                        <option value="+963">+963 - سوريا</option>
+                        <option value="+216">+216 - تونس</option>
+                        <option value="+971">+971 - الإمارات</option>
+                        <option value="+967">+967 - اليمن</option>
+                    </select>
+                    <input type="tel" id="phone" name="phone" placeholder="رقم الهاتف بدون المفتاح" required>
+                </div>
+            </div>
+            <div class="form-group package-select">
+                <label for="package">اختر النوع</label>
+                    <select id="package" name="package" required>
+                        <option value="">النوع</option>
+                        <option value="PowerPoint">عرض تقديمي PowerPoint</option>
+                        <option value="Word">ملف Word</option>
+                        <option value="PDF">ملف PDF</option>
+                        <option value="Other">آخر...</option> <!-- New option -->
+                    </select>
+            </div>
+
+            <div class="form-group">
+                <label for="details">تفاصيل الطلب</label>
+                <textarea id="details" name="details" placeholder="اكتب متطلباتك التفصيلية هنا..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary">إرسال الطلب</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="logo">مِـراس</div>
+            <nav class="footer-nav">
+                <a href="index.html">الرئيسية</a>
+                <a href="services.html">خدماتنا</a>
+                <a href="about.html">من نحن</a>
+                <a href="portfolio.html">أعمالنا</a>
+                <a href="contact.html">تواصل</a>
+            </nav>
+            <div class="socials">
+                <a href="#">🐦</a>
+                <a href="#">📱</a>
+                <a href="#">📸</a>
+            </div>
+            <p>© 2025 مِـراس. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+</body>
+</html>
